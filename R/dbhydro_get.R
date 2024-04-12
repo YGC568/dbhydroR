@@ -268,7 +268,7 @@ parse_hydro_response <- function(res, raw = FALSE){
                                     stringsAsFactors = FALSE, row.names = NULL))[1:(i - 1),]
     names(metadata) <- c(names(metadata)[2:(ncol(metadata))], "AID")
 
-    try({dt <- suppressMessages(read.csv(text = res, skip = i,
+    try({dt <- suppressMessages(read.csv(text = res, skip = i+2, 
       stringsAsFactors = FALSE, colClasses = c("DBKEY" = "character")))}
       , silent = TRUE)
 
