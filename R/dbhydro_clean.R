@@ -98,7 +98,7 @@ cleanwq <- function(dt, raw = FALSE, mdl_handling = "raw"){
 #'}
 
 clean_hydro <- function(dt){
-    reshape2::dcast(dt, date ~ station + type + units, value.var = "data.value",
+    reshape2::dcast(dt, date ~ station + units, value.var = "data.value",
       add.missing = TRUE, fun.aggregate = mean)
 }
 
